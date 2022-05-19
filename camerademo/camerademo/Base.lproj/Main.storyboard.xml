@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="camerademo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPy-f3-tfp">
+                                <rect key="frame" x="171.5" y="812" width="71" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="71" id="24W-a9-ZVk"/>
+                                    <constraint firstAttribute="height" constant="51" id="9UZ-em-hP6"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="pencil.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="camerabutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yvq-VZ-Tpg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="QPy-f3-tfp" secondAttribute="bottom" constant="33.5" id="Ex7-Sh-Rjk"/>
+                            <constraint firstItem="QPy-f3-tfp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bBB-Pc-XwO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <segue destination="0iO-8C-ZXB" kind="presentation" identifier="showphoto_segues" id="awH-GY-EWP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="95.758928571428569"/>
+        </scene>
+        <!--Preview View Controller-->
+        <scene sceneID="u8u-ZB-xaB">
+            <objects>
+                <viewController id="0iO-8C-ZXB" customClass="PreviewViewController" customModule="camerademo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oQb-ZN-QvX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PWt-a8-oem">
+                                <rect key="frame" x="0.0" y="20" width="414" height="802"/>
+                            </imageView>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQA-Fv-tHg">
+                                <rect key="frame" x="0.0" y="20" width="414" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xw9-wn-4x9">
+                                        <rect key="frame" x="16" y="15" width="48" height="30"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancel:" destination="0iO-8C-ZXB" eventType="touchUpInside" id="3Rf-Cu-vcM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGy-Uv-fAJ">
+                                        <rect key="frame" x="336" y="15" width="34" height="30"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="save:" destination="0iO-8C-ZXB" eventType="touchUpInside" id="tfB-Hv-aCH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Xw9-wn-4x9" firstAttribute="leading" secondItem="VQA-Fv-tHg" secondAttribute="leading" constant="16" id="2kv-1j-ZMd"/>
+                                    <constraint firstAttribute="bottom" secondItem="sGy-Uv-fAJ" secondAttribute="bottom" constant="15" id="6lV-4Y-X9E"/>
+                                    <constraint firstItem="sGy-Uv-fAJ" firstAttribute="top" secondItem="VQA-Fv-tHg" secondAttribute="top" constant="15" id="hhM-KO-11w"/>
+                                    <constraint firstAttribute="trailing" secondItem="sGy-Uv-fAJ" secondAttribute="trailing" constant="44" id="lbl-5I-fTJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xw9-wn-4x9" secondAttribute="bottom" constant="15" id="m11-Kq-MdE"/>
+                                    <constraint firstItem="Xw9-wn-4x9" firstAttribute="top" secondItem="VQA-Fv-tHg" secondAttribute="top" constant="15" id="o5D-kh-5sD"/>
+                                    <constraint firstAttribute="height" constant="60" id="zpd-fg-oIv"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PWt-a8-oem" firstAttribute="top" secondItem="oQb-ZN-QvX" secondAttribute="top" constant="20" symbolic="YES" id="6fg-28-nKx"/>
+                            <constraint firstItem="VQA-Fv-tHg" firstAttribute="trailing" secondItem="r0a-ZN-G76" secondAttribute="trailing" id="8hz-lc-i97"/>
+                            <constraint firstItem="PWt-a8-oem" firstAttribute="trailing" secondItem="r0a-ZN-G76" secondAttribute="trailing" id="Ccw-es-McG"/>
+                            <constraint firstAttribute="bottom" secondItem="PWt-a8-oem" secondAttribute="bottom" constant="20" symbolic="YES" id="X44-db-skv"/>
+                            <constraint firstItem="PWt-a8-oem" firstAttribute="leading" secondItem="r0a-ZN-G76" secondAttribute="leading" id="aah-rR-de7"/>
+                            <constraint firstItem="VQA-Fv-tHg" firstAttribute="leading" secondItem="r0a-ZN-G76" secondAttribute="leading" id="j3g-Rd-853"/>
+                            <constraint firstItem="VQA-Fv-tHg" firstAttribute="top" secondItem="oQb-ZN-QvX" secondAttribute="top" constant="20" id="sLF-qb-bMr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="r0a-ZN-G76"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tNk-sz-LOa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MTM-ya-KLV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="853.62318840579712" y="95.758928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pencil.circle" catalog="system" width="64" height="60"/>
+    </resources>
+</document>

@@ -1,0 +1,16 @@
+Write a Swift program that accept two integer values and return true if one of them is 20 or if their sum is 20.
+func make_20(x: Int, y: Int) -> Bool {
+    if x + y == 20 || x == 20 || y == 20
+    {
+        return true
+    }
+    else
+    {
+        return false
+    }
+}
+
+print(make_20(x: 29, y: 10))
+print(make_20(x: 20, y: 17))
+print(make_20(x: 11, y: 9))
+

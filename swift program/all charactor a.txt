@@ -1,0 +1,29 @@
+Write a Swift program to create a new string where all the character "a" have been removed except the first and last positions. 
+
+import Foundation
+func string_a(_ input: String) -> String {
+    var chars = input
+    let index_start = chars.index(after: chars.startIndex)
+    let index_end = chars.index(before: chars.endIndex)
+    let middleRange = index_start ..< index_end
+    
+    var sub_string = chars.substring(with: middleRange)
+    
+    while sub_string.characters.contains("a") {
+        sub_string.remove(at: sub_string.characters.index(of: "a")!)
+    }
+    
+    chars.replaceSubrange(middleRange, with: sub_string)
+    
+    return String(chars)
+}
+
+print(string_a("abcd"))
+print(string_a("abcda"))
+print(string_a("aabcdaa"))
+print(string_a("aabaaaacdaa"))
+Sample Output: 
+abcd
+abcda
+abcda
+abcda
